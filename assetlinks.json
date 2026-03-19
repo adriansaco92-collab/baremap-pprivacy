@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.enfermeria.baremo",
+      "sha256_cert_fingerprints": [
+        "D6:AD:D5:0C:F8:1D:EF:3D:58:7A:C5:07:CE:A8:D5:56:0A:05:41:C9:CA:01:54:68:19:57:34:5F:C0:FF:D0:5B"
+      ]
+    }
+  }
+]
