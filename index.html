@@ -46,6 +46,13 @@
             padding-left: 12px;
         }
 
+        h3 {
+            font-size: 17px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #16213e;
+        }
+
         p,
         li {
             font-size: 16px;
@@ -54,6 +61,7 @@
 
         ul {
             padding-left: 24px;
+            margin-bottom: 16px;
         }
 
         .highlight {
@@ -61,10 +69,16 @@
             padding: 16px;
             border-radius: 8px;
             margin: 16px 0;
+            border-left: 4px solid #00b4d8;
         }
 
         a {
             color: #00b4d8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -82,101 +96,56 @@
     <div class="container">
 
         <h1>Política de Privacidad</h1>
-        <p class="date">Última actualización: 1 de marzo de 2026</p>
+        <p class="date">Última actualización: 6 de abril de 2026</p>
 
-        <p>BaremApp ("la App") es una aplicación de gestión de baremos de enfermería desarrollada por Adrián (en
-            adelante, "nosotros"). Esta política explica qué datos recogemos, cómo los usamos y cómo los protegemos.</p>
+        <p>BaremApp ("la App") es una herramienta de gestión de méritos y baremos de enfermería desarrollada por Adrián (en adelante, "nosotros"). Esta política describe cómo protegemos tu privacidad y la seguridad de tu información profesional.</p>
 
         <div class="highlight">
-            <strong>Resumen rápido:</strong> Tus datos de baremo se guardan en tu dispositivo. No vendemos ni
-            compartimos información personal con terceros con fines publicitarios.
+            <strong>Compromiso de Privacidad:</strong> Tus datos de baremo son tuyos. No vendemos ni compartimos información personal con terceros con fines publicitarios.
         </div>
 
-        <h2>1. Datos que recogemos</h2>
-
-        <h3>Datos almacenados localmente (en tu dispositivo)</h3>
+        <h2>1. Seguridad Blindada de tus Datos</h2>
+        <p>BaremApp utiliza un sistema de <strong>"Seguridad Blindada"</strong> para proteger tu información:</p>
         <ul>
-            <li><strong>Méritos y formación:</strong> Cursos, experiencia laboral, idiomas y otros datos que introduces
-                manualmente. Se guardan en una base de datos local (Room) y en SharedPreferences.</li>
-            <li><strong>Preferencias:</strong> Comunidad favorita, ajustes de visualización, modo oscuro.</li>
-            <li><strong>Logros:</strong> Progreso de la gamificación (Vitrina de Logros).</li>
+            <li><strong>Encriptación Local:</strong> Tus datos se almacenan en tu dispositivo mediante una base de datos encriptada con <strong>SQLCipher (AES-256)</strong> y preferencias protegidas por el hardware <strong>Android Keystore</strong>. Solo tú puedes acceder a ellos.</li>
+            <li><strong>Procesamiento en Dispositivo (On-Device):</strong> El escaneo de diplomas (OCR) y el lector de Vida Laboral se ejecutan localmente. <strong>Nunca enviamos tus imágenes ni archivos PDF a servidores externos.</strong></li>
         </ul>
 
-        <h3>Datos procesados temporalmente</h3>
+        <h2>2. Datos que Recogemos y Sincronización</h2>
         <ul>
-            <li><strong>Cámara (OCR):</strong> Cuando escaneas un diploma, la imagen se procesa localmente usando Google
-                ML Kit para extraer texto. La imagen NO se envía a ningún servidor externo.</li>
-            <li><strong>PDF de Vida Laboral:</strong> El archivo PDF se procesa localmente en tu dispositivo para
-                extraer los contratos. NO se sube a ningún servidor.</li>
+            <li><strong>Datos de Méritos y Formación:</strong> Se guardan localmente. Si inicias sesión, se sincronizan con <strong>Firebase Firestore</strong> de forma cifrada (HTTPS/TLS) para permitir el uso en múltiples dispositivos.</li>
+            <li><strong>Ranking y Tablón:</strong> Si participas en el Ranking, compartes tu puntuación de forma anónima. En el Tablón de anuncios, compartes los datos que decidas publicar voluntariamente.</li>
+            <li><strong>Gestión de Suscripciones (RevenueCat):</strong> Al adquirir la versión Premium, RevenueCat recibe un identificador anónimo. Los datos de pago son gestionados exclusivamente por <strong>Google Play</strong> o <strong>Apple App Store</strong>.</li>
         </ul>
 
-        <h3>Datos enviados a servicios externos</h3>
+        <h2>3. Permisos Utilizados</h2>
         <ul>
-            <li><strong>Firebase Firestore:</strong> Si participas en el Ranking anónimo o el Tablón de anuncios,
-                enviamos tu puntuación (sin datos personales identificables) y tus publicaciones.</li>
-            <li><strong>RevenueCat:</strong> Para gestionar suscripciones Premium, RevenueCat recibe un identificador
-                anónimo de usuario y el estado de tu suscripción. No recibe datos de baremo ni personales.</li>
-            <li><strong>Feedback de contacto:</strong> Si envías un mensaje desde Ajustes, el texto se almacena en
-                Firebase Firestore para que podamos responder.</li>
+            <li><strong>Cámara:</strong> Para el escáner de diplomas.</li>
+            <li><strong>Internet:</strong> Sincronización, Ranking, Tablón y verificación de suscripción.</li>
+            <li><strong>Notificaciones:</strong> Avisos de fechas oficiales de baremos.</li>
         </ul>
 
-        <h2>2. Permisos de la App</h2>
+        <h2>4. Proveedores de Servicios (Terceros)</h2>
         <ul>
-            <li><strong>Cámara:</strong> Para escanear diplomas con el escáner OCR. Solo se activa cuando tú lo
-                solicitas.</li>
-            <li><strong>Internet:</strong> Para el Ranking, Tablón de anuncios, verificación de suscripción Premium y
-                envío de feedback.</li>
-            <li><strong>Notificaciones:</strong> Para recordatorios de fechas de baremos (opcional, puedes desactivarlas
-                en Ajustes).</li>
-            <li><strong>Vibración:</strong> Para feedback háptico al interactuar con la app.</li>
-            <li><strong>Facturación:</strong> Para procesar compras de la suscripción Premium a través de Google Play.
-            </li>
+            <li><strong>Google Firebase:</strong> Almacenamiento y autenticación. <a href="https://firebase.google.com/support/privacy" target="_blank">Privacidad de Firebase</a></li>
+            <li><strong>RevenueCat:</strong> Gestión de suscripciones Premium. <a href="https://www.revenuecat.com/privacy" target="_blank">Privacidad de RevenueCat</a></li>
+            <li><strong>Google ML Kit:</strong> Reconocimiento de texto local.</li>
         </ul>
 
-        <h2>3. Cómo protegemos tus datos</h2>
+        <h2>5. Tus Derechos y Eliminación de Datos</h2>
+        <p>De acuerdo con el <strong>RGPD</strong> y la <strong>LOPDGDD</strong>, tienes pleno control sobre tus datos:</p>
         <ul>
-            <li>Los datos de baremo se almacenan <strong>exclusivamente en tu dispositivo</strong>.</li>
-            <li>Las comunicaciones con Firebase y RevenueCat utilizan <strong>conexiones cifradas (HTTPS/TLS)</strong>.
-            </li>
-            <li>No almacenamos imágenes de diplomas ni archivos PDF de Vida Laboral en ningún servidor.</li>
-            <li>El Ranking es <strong>completamente anónimo</strong> — no se vincula a nombre, email ni ningún dato
-                personal.</li>
+            <li><strong>Acceso y Rectificación:</strong> Puedes editar o borrar cualquier mérito directamente en la App.</li>
+            <li><strong>Eliminación de Cuenta:</strong> La App incluye un botón en <em>Perfil > Ajustes > Borrar Todo</em> que elimina permanentemente tus datos de nuestros servidores y del dispositivo local.</li>
+            <li><strong>Solicitud Web:</strong> Si deseas solicitar la eliminación de tus datos sin tener la App instalada, puedes hacerlo a través de nuestra <strong>página de soporte oficial</strong>:</li>
         </ul>
+        <p style="text-align: center; margin: 20px 0;">
+            <a href="https://adriansaco92-collab.github.io/baremapp-support/" style="font-weight: bold; background: #00b4d8; color: white; padding: 10px 20px; border-radius: 8px;">Centro de Soporte y Eliminación de Datos</a>
+        </p>
 
-        <h2>4. Terceros</h2>
-        <p>Utilizamos los siguientes servicios de terceros:</p>
-        <ul>
-            <li><strong>Google Firebase (Firestore):</strong> Base de datos en la nube para ranking y tablón. <a
-                    href="https://firebase.google.com/support/privacy" target="_blank">Política de Firebase</a></li>
-            <li><strong>Google ML Kit:</strong> Procesamiento de texto OCR en dispositivo. <a
-                    href="https://developers.google.com/ml-kit/terms" target="_blank">Términos de ML Kit</a></li>
-            <li><strong>RevenueCat:</strong> Gestión de suscripciones. <a href="https://www.revenuecat.com/privacy"
-                    target="_blank">Política de RevenueCat</a></li>
-            <li><strong>Google Play Billing:</strong> Procesamiento de pagos. <a
-                    href="https://policies.google.com/privacy" target="_blank">Política de Google</a></li>
-        </ul>
-
-        <h2>5. Datos de menores</h2>
-        <p>BaremApp no está dirigida a menores de 16 años. No recopilamos intencionadamente datos de menores.</p>
-
-        <h2>6. Tus derechos</h2>
-        <p>Puedes ejercer los siguientes derechos:</p>
-        <ul>
-            <li><strong>Acceso y portabilidad:</strong> Todos tus datos están en tu dispositivo, accesibles
-                directamente.</li>
-            <li><strong>Eliminación:</strong> Desinstala la app para eliminar todos los datos locales. Para datos del
-                Ranking o Tablón, contacta con nosotros.</li>
-            <li><strong>Rectificación:</strong> Puedes editar o eliminar tus méritos en cualquier momento desde la app.
-            </li>
-        </ul>
-
-        <h2>7. Cambios en esta política</h2>
-        <p>Nos reservamos el derecho de actualizar esta política. Los cambios se notificarán a través de la app o se
-            publicarán en esta página.</p>
-
-        <h2>8. Contacto</h2>
-        <p>Si tienes preguntas sobre esta política, puedes contactarnos en:</p>
-        <p>📧 <a href="mailto:baremap@gmail.com">baremap@gmail.com</a></p>
+        <h2>6. Contacto</h2>
+        <p>Para cualquier duda o ejercicio de derechos, contacta con nosotros en:</p>
+        <p>📧 <a href="mailto:baremapp@gmail.com">baremapp@gmail.com</a></p>
 
         <footer>
             © 2026 BaremApp. Todos los derechos reservados.
