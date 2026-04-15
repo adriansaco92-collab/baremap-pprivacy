@@ -3,88 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte - BaremApp</title>
+    <title>Centro de Ayuda - BaremApp</title>
+    <!-- Importamos la fuente Outfit de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #007aff;
+            --primary-dark: #0056b3;
+            --accent: #00bfa5;
+            --bg: #f8f9fc;
+            --text: #1d1d1f;
+            --text-light: #6e6e73;
+            --card-bg: #ffffff;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #f5f5f7;
+            font-family: 'Outfit', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
         }
-        .container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        h1 {
-            color: #007aff;
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-top: 30px;
-        }
-        .contact-box {
-            background-color: #f2f7ff;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #007aff;
-            margin: 20px 0;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #007aff;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
             color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        footer {
-            margin-top: 50px;
+            padding: 80px 20px;
             text-align: center;
-            font-size: 14px;
-            color: #888;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,122,255,0.2);
         }
-        a { color: #007aff; text-decoration: none; }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+        }
+        /* Contact Box */
+        .contact-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0,122,255,0.1);
+        }
+        .contact-info h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        .contact-info p {
+            margin: 5px 0 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        .btn-contact {
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,122,255,0.3);
+        }
+        .btn-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,122,255,0.4);
+            background: var(--primary-dark);
+        }
+        /* FAQ Grid */
+        .faq-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .faq-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease;
+        }
+        .faq-card:hover {
+            transform: scale(1.01);
+        }
+        .faq-card h4 {
+            margin: 0 0 10px;
+            font-size: 1.15rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+        .faq-card h4::before {
+            content: "✦";
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        .faq-card p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-light);
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+        .legal-links {
+            margin-top: 20px;
+        }
+        .legal-links a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            .contact-card { flex-direction: column; text-align: center; gap: 20px; }
+            .hero h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+    <section class="hero">
+        <h1>BaremApp</h1>
+        <p>Centro de Ayuda y Soporte Técnico</p>
+    </section>
     <div class="container">
-        <h1>Centro de Soporte BaremApp</h1>
-        <p>Bienvenido al centro de ayuda de BaremApp. Estamos aquí para ayudarte a gestionar tus méritos de la forma más sencilla posible.</p>
-        
-        <div class="contact-box">
-            <h3>¿Tienes problemas con la App?</h3>
-            <p>Si experimentas algún error, no puedes acceder a tu cuenta o tienes dudas sobre el cálculo de baremos, escríbenos directamente.</p>
-            <a href="mailto:baremapp@gmail.com" class="btn">Contactar Soporte</a>
+        <!-- Tarjeta de Contacto Directo -->
+        <div class="contact-card">
+            <div class="contact-info">
+                <h3>¿Necesitas hablar con un experto?</h3>
+                <p>Respondemos en menos de 24 horas laborables.</p>
+            </div>
+            <a href="mailto:baremapp@gmail.com" class="btn-contact">Contactar soporte</a>
         </div>
-
-        <h2>Preguntas Frecuentes</h2>
-        <p><strong>1. ¿Cómo escaneo mi vida laboral?</strong><br>
-        Ve a la sección "Mis méritos globales", pulsa en el icono de escáner y selecciona tu PDF o foto de la vida laboral. Nuestra IA extraerá los periodos automáticamente.</p>
-
-        <p><strong>2. ¿Están actualizados los baremos?</strong><br>
-        Sí, trabajamos constantemente para actualizar los baremos del SAS, GVA, SERMAS y otras comunidades según se publican en los boletines oficiales.</p>
-
-        <p><strong>3. Gestión de Suscripciones</strong><br>
-        BaremApp Premium se gestiona a través de tu cuenta de Apple ID. Puedes cancelar o modificar tu suscripción en cualquier momento desde los Ajustes de tu iPhone > Tu Nombre > Suscripciones.</p>
-
-        <h2>Enlaces Legales</h2>
-        <ul>
-            <li><a href="https://adriansaco92-collab.github.io/baremap-pprivacy/">Política de Privacidad</a></li>
-            <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Términos de Uso (EULA)</a></li>
-        </ul>
+        <h2 style="margin-bottom: 25px;">Preguntas Frecuentes (FAQs)</h2>
+        <div class="faq-section">
+            <div class="faq-card">
+                <h4>¿Cómo funciona el escaneo de Vida Laboral?</h4>
+                <p>Solo tienes que subir el PDF original del INSS o una foto nítida. Nuestra IA analiza las fechas de alta y baja, calcula los días totales y los convierte a puntos según el baremo de la comunidad que elijas.</p>
+            </div>
+            <div class="faq-card">
+                <h4>¿Qué hago si mi baremo oficial ha cambiado?</h4>
+                <p>Nuestra base de datos se actualiza semanalmente. Si detectas alguna discrepancia, asegúrate de tener la última versión de la app o contacta con nosotros para que revisemos el boletín oficial de tu región.</p>
+            </div>
+            <div class="faq-card">
+                <h4>¿Se pueden comparar puntos entre distintas CC.AA.?</h4>
+                <p>¡Sí! Usa el "Comparador de Comunidades" en el menú principal. Podrás ver en tiempo real cuántos puntos tendrías en el SAS frente a la GVA o el SERMAS con los mismos méritos.</p>
+            </div>
+            <div class="faq-card">
+                <h4>¿Están seguros mis datos personales?</h4>
+                <p>Absolutamente. Los documentos que escaneas se procesan localmente o en servidores cifrados de alta seguridad. BaremApp cumple con el RGPD y tus datos nunca se comparten con terceros.</p>
+            </div>
+            <div class="faq-card">
+                <h4>¿Cómo gestiono mi suscripción Premium?</h4>
+                <p>Las suscripciones se gestionan de forma segura a través de Apple. Puedes cancelarla en cualquier momento desde los Ajustes de tu iPhone > [Tu Nombre] > Suscripciones. El acceso Premium se mantendrá activo hasta el final del periodo pagado.</p>
+            </div>
+            <div class="faq-card">
+                <h4>¿Puedo usar la App sin crear una cuenta?</h4>
+                <p>Sí, disponemos de un "Modo Invitado" plenamente funcional. Sin embargo, te recomendamos crear una cuenta para poder sincronizar tus méritos entre dispositivos y no perder la información si cambias de móvil.</p>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 BaremApp. Diseñado para simplificar tu carrera profesional.</p>
+            <div class="legal-links">
+                <a href="https://adriansaco92-collab.github.io/baremap-pprivacy/">Política de Privacidad</a>
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Términos de Uso (EULA)</a>
+            </div>
+        </footer>
     </div>
-    <footer>
-        <p>&copy; 2026 BaremApp. Todos los derechos reservados.</p>
-    </footer>
 </body>
 </html>
